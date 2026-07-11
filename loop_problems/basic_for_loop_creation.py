@@ -31,17 +31,21 @@ for i in range(1,num_range+1,2):
 
 # Prime number checking problems -----------------
 
-num_for_checking = int(input('Enter the number you wnant to check : '))
+num_for_checking = int(input("Enter the number you want to check: "))
 isPrime = True
 
-for i in range(2 ,num_for_checking):
-    if(num_for_checking % i == 0):
-        isPrime = False
-        break
-if(isPrime):
-     print(f'{num_for_checking} is prime number.') 
+if num_for_checking <= 1:
+    print(f"{num_for_checking} is not a prime number.")
 else:
-    print(f'{num_for_checking} is not prime number.')       
+    for i in range(2, num_for_checking):
+        if num_for_checking % i == 0:
+            isPrime = False
+            break
+
+    if isPrime:
+        print(f"{num_for_checking} is a prime number.")
+    else:
+        print(f"{num_for_checking} is not a prime number.")
 
 
 
@@ -59,7 +63,7 @@ print(sum)
 
 # find the sum of all odd numbers ------------------------------
 
-num_range = int(input('Enter the of even number printing : '))
+num_range = int(input('Enter the of odd number printing : '))
 sum = 0
 
 for i in range(1,num_range+1,2):
@@ -70,9 +74,9 @@ print(sum)
 
 #  find the square of number --------------------------------
 
-num_range = int(input('Enter the of even number printing : '))
+num_range = int(input('Enter the number as a range for printing squares : '))
 
-for i in range(0,num_range):
+for i in range(1,num_range):
     print(i , i**2)
 
 
