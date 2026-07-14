@@ -51,4 +51,62 @@ elif(decision == 5):
     print(string.split())
 else:
     print('You choose invalid number.')    
-             
+
+
+
+
+#   count vowels in a string -----------------------------
+
+input_string = input('Enter a string : ')
+vowels = 'aeiouAEIOU'
+count = 0
+
+for x in input_string :
+        if(x in vowels): 
+          count +=1
+print(count)  
+
+
+
+
+
+#  finding the upper-case , lower-case ,numeric alphabets or symbols in a string -------------------
+
+string_input = input('Enter a string : ')
+lowercase_alphabets = 'abcdefghijklmnopqrstuvwxyz'
+uppercase_alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+numeric_alphabets = '0123456789'
+uppercase_count = 0
+lowercase_count = 0
+numeric_count = 0
+symbol_count = 0
+
+for x in string_input :
+    if x in uppercase_alphabets :
+        uppercase_count += 1
+    elif x in lowercase_alphabets :
+        lowercase_count += 1
+    elif x in numeric_alphabets :
+        numeric_count += 1
+    else :
+        symbol_count += 1
+print(f'uppercase : {uppercase_count} lowercase : {lowercase_count} numbers : {numeric_count} symbols : {symbol_count}') 
+
+
+#  reverse a string ---------------------------------
+
+input_str = input('Enter a string : ')
+reverse_str = ""
+
+for i in range(len(input_str)-1,-1,-1):
+    reverse_str += input_str[i]
+print(f'reverse string of {input_str} is {reverse_str}.')    
+
+# string slicing problems -------------------------------
+
+print(input_str[0:4])
+print(input_str[0:])
+print(input_str[0:4])
+print(input_str[:4])
+print(input_str[2:])
+print(input_str[0::2])
