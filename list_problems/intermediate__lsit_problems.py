@@ -35,3 +35,5 @@ for x in List:
     if(x == 10):
         List.remove(x)
 print(List)
+
+
