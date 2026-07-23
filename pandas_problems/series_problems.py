@@ -106,3 +106,73 @@ series = pd.Series(list)
 array = np.array(series)
 print(type(array))
 print(array)
+
+
+#  Sort Series --------------------
+
+series = pd.Series( ['100','200','python','300.12','400'])
+print('Original Series')
+print(series)
+print('assending sorted series')
+sorted_series = series.sort_values()
+print(sorted_series)
+print('Dessending sorted series')
+sorted_series = series.sort_values(ascending = False)
+print(sorted_series)
+
+
+# Append Data to Series ----------------
+
+s = pd.Series(['100', '200', 'python', '300.12', '400'])
+print(s)
+new_s = pd.concat([s,pd.Series([500,'php'])],ignore_index = True)
+print(new_s)
+
+
+# Subset Series -----------------
+
+s = pd.Series([0,1,2,3,4,5,6,7,8,9,10])
+new_loop_list = []
+for x in s :
+    if(x < 6):
+        new_loop_list.append(x)
+new_loop_series = pd.Series(new_loop_list)
+print(new_loop_series)
+
+# OR 
+
+s = pd.Series([0,1,2,3,4,5,6,7,8,9,10])
+new_series = s[s < 6]
+print(new_series)
+
+
+
+# Change the order of index of a given series -------------
+
+series = pd.Series([1,2,3,4,5], index = ['A','B','C','D','E'])
+print(series)
+series = series.reindex(index = ['B','A','C','D','E'])
+print(series)
+
+# Series Stats ----------------------
+
+s = pd.Series(data = [1,2,3,4,5,6,7,8,9,5,3])
+print(f'mean of series : {s.mean()}')
+print(f'mode of series : {s.mode()}')
+print(f'median of series : {s.median()}')
+print(f'Standard deviation of series : {s.std()}')
+
+
+# Five-Number Summary ----------------
+
+s = pd.Series(data = [1,2,3,4,5,6,7,8,9,5,3])
+result = np.percentile(s,q = [0,25,50,75,100])
+print(result)
+print(s.describe())
+
+
+#  Value Frequency ---------------
+
+s = pd.Series(data = [1,2,3,4,5,6,7,8,9,5,3])
+print(s.value_counts())
+
